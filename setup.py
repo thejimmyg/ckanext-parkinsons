@@ -25,6 +25,6 @@ setup(
     entry_points=\
     """
     [ckan.plugins]
-    myplugin=ckanext.parkinsons.plugin:ParkinsonsPlugin
+    parkinsons=ckanext.parkinsons.plugin:ParkinsonsPlugin
     """,
 )
