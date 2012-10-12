@@ -1,0 +1,13 @@
+.header.outer, .header, .outer, .footer, .outer, .footer.outer {
+  background-color: #ffffff;
+  background-image: none;
+  border-bottom: 0px;
+  padding: 0px;
+  margin: 0px; 
+  text-align: left;
+}
+
+body{
+    background: #ffffff;
+}
+

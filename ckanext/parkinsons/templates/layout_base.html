@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="${h.url_for('/css/blueprint/screen.css')}" type="text/css" media="screen, projection" />
   <link rel="stylesheet" href="${h.url_for('/css/blueprint/print.css')}" type="text/css" media="print" />
   <!--[if lt IE 8]>
-    <link rel="stylesheet" href="${h.url_for('/css/blueprint/ie.css')}" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/css/blueprint/ie.css" type="text/css" media="screen, projection">
   <![endif]-->
   <link rel="stylesheet" href="${h.url_for('/css/style.css?v=2')}" />
 
@@ -42,11 +42,17 @@
     ${optional_head()}
   </py:if>
 
+  <!--[if lt IE 7]>
+    <link rel="stylesheet" href="/css/ie_basic.css" type="text/css" media="screen, projection">
+  <![endif]-->
   ${h.literal(getattr(g, 'template_head_end', ''))}
 </head>
 
 <body class="${request.environ.get('pylons.routes_dict', {}).get('action')} 
              ${request.environ.get('pylons.routes_dict', {}).get('controller').split(':')[-1]}">
+  <!--[if lt IE 7]>
+    <div style="width: 100%; background: #000;"><div style="padding:10px; color: #fff; text-align: center">This site is designed for modern browsers, it is known not to work well with your browser. Please access it with Internet Explorer 9 or a recent version of Chrome or Firefox.</div></div>
+  <![endif]-->
    <div class="welcome-banner js-welcome-banner" style="display: none;">
      <span>First time at ${g.site_title}? Visit our <a href="${h.url_for(controller='home', action='about')}">About page</a> to find out more.</span>
      <button class="pretty-button js-kill-button">x</button>
